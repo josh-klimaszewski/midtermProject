@@ -8,7 +8,7 @@ main {
     justify-content: center;
     height: 800px;
 }
-header, .startButton {
+header, .startButton, .playerInfo{
     width: 90%;
     height: 10%;
     display:flex;
@@ -16,13 +16,14 @@ header, .startButton {
     margin-bottom: 10px;
     
 }
+header {
+
+}
+.startButton {
+
+}
 .playerInfo {
-    
-    width: 90%;
-    height: 10%;
-    display: flex;
-    border: 1px solid black;
-    margin-bottom: 10px;
+
 }
 
 content {
