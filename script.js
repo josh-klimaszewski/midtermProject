@@ -13,7 +13,7 @@ $(function () {
     var $cell7 = $('.cell7');
     var $cell8 = $('.cell8');
     var $cell9 = $('.cell9');
-    var $cell10 = $('.cel0');
+    var $cell10 = $('.cell10');
     var $cell11 = $('.cell11');
     var $cell12 = $('.cell12');
     var $cell13 = $('.cell13');
@@ -28,7 +28,7 @@ $(function () {
        
     function setColors() {
         shuffle(cardColors);
-        for (var i = 0; i < cellArray.length; i++) {
+        for (var i = 0; i <= cellArray.length; i++) {
             cellArray[i].children('.back').addClass(cardColors[i]);
         }
 
@@ -49,6 +49,8 @@ $(function () {
     // click start: show player info, content 
     $grid.hide();
     $playerInfo.hide();
+    $('.back').hide();
+  
 
     $startButton.click(function() {
         
@@ -56,7 +58,13 @@ $(function () {
         $grid.slideDown(200);
         $startButton.hide();
         setColors(cellArray);
+    })
+    $('.front').click(function() {
+        $(this).hide();
+        $(this).siblings('.back').show();
+  
 
+        
 
     })
     // toggle between player 1 / player 2

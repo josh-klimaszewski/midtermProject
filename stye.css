@@ -11,12 +11,13 @@ main {
     height: 800px;
     text-align: center;
 }
+
 header {
-  width: 90%;
-  height: 10%;
-  margin-bottom: 20px;
-  font-size: 50px;
-  font-family: Pacifico, serif;
+    width: 90%;
+    height: 10%;
+    margin-bottom: 20px;
+    font-size: 50px;
+    font-family: Pacifico, serif;
 }
 
 content {
@@ -30,73 +31,101 @@ content {
 .playerInfo {
     width: 90%;
     height: 10%;
-    display:flex;
+    display: flex;
     border: 5px solid black;
     margin-bottom: 10px;
     border-radius: 20px;
     font-family: Quicksand, "sans-serif";
     background-color: white;
 }
-.playerOne , .playerTwo {
-  background-color: white;
-}
-.reset {
-  width: 30%;
-  font-size: 20px;
-  border: 2px solid black;
-  height: 50px;
-  margin-top: 10px;
-  border-radius: 15px;
-}
-.startButton {
-  width: 90%;
-  height: 10%;
-  border: 5px solid black;
-  margin-bottom: 10px;
-  font-family: Quicksand, "sans-serif";
-  font-size: 40px;
-  border-radius: 20px;
-  padding-top: 10px;
-  background-color: lightgrey;
+
+.playerOne,
+.playerTwo {
+    background-color: white;
 }
 
-.row1, .row2, .row3, .row4 {
-    display:flex;
+.reset {
+    width: 30%;
+    font-size: 20px;
+    border: 2px solid black;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+.startButton {
+    width: 90%;
+    height: 10%;
+    border: 5px solid black;
+    margin-bottom: 10px;
+    font-family: Quicksand, "sans-serif";
+    font-size: 40px;
+    border-radius: 20px;
+    padding-top: 10px;
+    background-color: lightgrey;
+}
+
+.row1,
+.row2,
+.row3,
+.row4 {
+    display: flex;
     width: 90%;
     justify-content: space-between;
-
 }
+
 .cell {
     width: 100px;
     height: 100px;
-    border: 1px solid black;
+    
+    border: 3px solid black;
     border-radius: 10px;
 }
+
 .red {
-  background-color: red;
+    background-color: red;
 }
+
 .blue {
-  background-color: blue;
+    background-color: blue;
 }
+
 .orange {
-background-color: orange;
+    background-color: orange;
 }
+
 .yellow {
-background-color: yellow;
+    background-color: yellow;
 }
+
 .green {
-background-color: green;
+    background-color: green;
 }
+
 .purple {
-background-color: purple;
+    background-color: purple;
 }
+
 .cyan {
-background-color: cyan;
+    background-color: cyan;
 }
+
 .grey {
-background-color: grey;
+    background-color: grey;
 }
-.cell, .front{
-  max-width: 100px;
-background-image: url("http://kingsbananaleaf.com/wp-content/uploads/2017/11/ICE-CREAM.png");
+
+
+.front {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    max-width: 100px;
+    background-image: url("http://kingsbananaleaf.com/wp-content/uploads/2017/11/ICE-CREAM.png");
 }
+.back {
+    width: 100%;
+    height: 100%;
+    
+    max-width: 100px;
+}
+
