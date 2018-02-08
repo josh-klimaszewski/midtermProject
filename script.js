@@ -34,6 +34,7 @@ $(function () {
     var cardArray = [];
     var tryCounter = 0;
     var thisCard;
+    var winCounter = 0;
     //                                                   FUNCTIONS
     function shuffle(array) {
         var counter = array.length;
@@ -51,9 +52,13 @@ $(function () {
 
     function setColors(colors, array) {
         for (var i = 0; i < array.length; i++) {
-            array[i].children('.back').attr('id', colors[i]);
+            array[i].children('.back').attr('class', 'back')
+            array[i].children('.back').addClass(colors[i]).attr('data-color', colors[i]);
 
         }
+    }
+    function reset() {
+
     }
 
     //                                                   EVENT FUNCTIONS
@@ -81,63 +86,48 @@ $(function () {
         thisCard.hide();
         thisCard.siblings('.back').show();
         cardsFlipped++;
-
-        colorArray.push(thisCard.siblings('.back').attr('id'));
+        colorArray.push(thisCard.siblings('.back').attr('data-color'));
         cardArray.push(thisCard);
         cardChecker();
-
-
-
+        winChecker();
     })
 
     function cardChecker() {
-
         if (cardsFlipped === 2) {
             
-
-            if (colorArray[0] !== colorArray[1]) {
+            var color1 = colorArray[0];
+            var color2 = colorArray[1];
+            console.log(color1, color2);
+            if (color1 !== color2) {
                 cardArray[0].show();
                 cardArray[1].show();
-                $('#' + colorArray[0]).hide();
-                $('#' + colorArray[1]).hide();
+                $('.' + color1).fadeOut(500);
+                $('.' + color2).fadeOut(500);
 
-            } else {
-                $('#' + colorArray[0]).hide();
-                
+            } else if (color1 === color2) {
+                $('.' + color1).fadeOut(500);
+                winCounter++;
             }
-            tryCounter++;
+            tryCounter ++;
             cardsFlipped = 0;
             cardArray = [];
             colorArray = [];
-            console.log(cardsFlipped, cardArray, colorArray)
+            console.log(cardsFlipped, cardArray, colorArray, tryCounter ,winCounter)
+            
+        }
+        
+        // win function: paramaters = tryCounter, winCounter
+        // if tryCounter = 10, you lose
+        // if winCounter = 8, you win.
+    }
+    function winChecker () {
+        if (winCounter === 8) {
+            console.log("you won!");
+        }
+        if (tryCounter === 12) {
+            console.log("you lose!");
         }
     }
-
-
-    //         if (colorArray[0] === colorArray[1]) {
-    //             var thisColor = colorArray[0];
-    //             $('#' + thisColor).hide();
-    //         } else {
-    //             var front1 = cardArray[0];
-    //             var front2 = cardArray[1];
-    //             var back1 = colorArray[0];
-    //             var back2 = colorArray[1];
-    //             front1.show();
-    //             front2.show();
-    //             $('#' + back1).hide();
-    //             $('#' + back2).hide();
-    //             console.log(front1, front2)
-    //         }
-    //     }
-    //     tryCounter ++;
-    //     cardsFlipped = 0;
-    //     cardArray = [];
-    //     colorArray = [];
-
-
-
-
-
 
     //                                                   WORKFLOW
     // on load/reset: 
@@ -146,28 +136,5 @@ $(function () {
     $cardsBack.hide();
 
 
-    // while (cardArray.length < 2) {
-    //     console.log(cardArray);
-    //     if (colorArray[0] === colorArray[1]) {
-    //         cardArray[0].slideUp(300);
-    //         cardArray[1].slideUp(300)
-    //         cardsFlipped = 0;
-    //         colorArray = [];
-    //         cardArray = [];
 
-    //     }
-
-
-
-
-
-    //assign random color classes to each cell 
-    // click start: show player info, content 
-
-    // toggle between player 1 / player 2
-    // click cell: hide back color, show front color
-    // when 2 cells are shown:
-    // if cell colors don't match, flip back over
-    // if cell colors match, dissappear and give player 1 or 2 a point 
-    // player wins at 5 points 
 });
