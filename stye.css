@@ -78,35 +78,35 @@ content {
   border-radius: 10px;
 }
 
-.red {
+#red {
   background-color: red;
 }
 
-.blue {
+#blue {
   background-color: blue;
 }
 
-.orange {
+#orange {
   background-color: orange;
 }
 
-.yellow {
+#yellow {
   background-color: yellow;
 }
 
-.green {
+#green {
   background-color: green;
 }
 
-.purple {
+#purple {
   background-color: purple;
 }
 
-.cyan {
+#cyan {
   background-color: cyan;
 }
 
-.grey {
+#grey {
   background-color: grey;
 }
 
