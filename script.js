@@ -39,7 +39,7 @@ $(function () {
     var thisCard;
     var winCounter = 0;
     //                                                   FUNCTIONS
-    //Shuffle the cell cards
+    //Shuffle the color classes
     function shuffle(array) {
         var counter = array.length;
         while (counter > 0) {
@@ -70,12 +70,13 @@ $(function () {
         $playerInfo.slideDown(200);
         $grid.slideDown(200);
         $startButton.hide();
+        //populate board
         shuffle(cardColors);
         setColors(cardColors, cellArray);
         //shows the grid and player info form
     })
 
-    //button to reset the grids, same function for play again button and reset button
+    //button to reset the game, same function for play again button and reset button
     $resetButton.click(function () {
 
         $grid.hide();
@@ -91,29 +92,35 @@ $(function () {
 
     })
 
-    //shows the front of card
+    
     $cardsFront.click(function () {
         thisCard = $(this);
+        //flips card to back
         thisCard.hide();
+        //shows sibling div (with color class)
         thisCard.siblings('.back').show();
+        //store info to feed into cardChecker()
         cardsFlipped++;
         colorArray.push(thisCard.siblings('.back').attr('data-color'));
         cardArray.push(thisCard);
         cardChecker();
+        //see if you won or lost
         winChecker();
+        //update try count on page
         updateAttempts();
     })
 
     //checks if the two cards have a match
     function cardChecker() {
+        //triggers every time 2 cards are flipped
         if (cardsFlipped === 2) {
-
+            //store arrays into individual variables
             var color1 = colorArray[0];
             var color2 = colorArray[1];
             var card1 = cardArray[0];
             var card2 = cardArray[1];
-            console.log(color1, color2);
             if (color1 !== color2) {
+                // if no match, hide cells
                 setTimeout(function () {
                     card1.slideDown(1500);
                     card2.slideDown(1500);
@@ -121,6 +128,7 @@ $(function () {
                     $('.' + color2).slideUp(1500);
                 }, 500);
             } else if (color1 === color2) {
+                //if match, only hide back, wins++
                 setTimeout(function () {
                         $('.' + color1).slideUp(1500);
                     },
@@ -128,6 +136,7 @@ $(function () {
                 winCounter++;
             }
             tryCounter++;
+            //reset cardchecker
             cardsFlipped = 0;
             cardArray = [];
             colorArray = [];
@@ -135,6 +144,7 @@ $(function () {
     }
 
     function winChecker() {
+        // if 8 matches, show win form and reset counters
         if (winCounter === 8) {
             $playerInfo.hide();
             $grid.hide();
@@ -143,6 +153,7 @@ $(function () {
             tryCounter = 0;
             console.log("you won!");
         }
+        //if 15 tries, show lose form and reset counters
         if (tryCounter === 15) {
             $playerInfo.hide();
             $grid.hide();
