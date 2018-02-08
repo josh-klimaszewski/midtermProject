@@ -16,15 +16,14 @@
     <div class="startButton">Start</div>
 
     <div class="playerInfo">
-      <div class="playerOne">
-        <p>Player One</p>
-      </div>
 
       <button class="reset">Reset</button>
 
-      <div class="playerTwo">
-        <p>Player Two</p>
+      <div class="playerOne">
+        <p>Attempts: </p>
+        <p>X</p>
       </div>
+
     </div>
 
     <content>
@@ -101,6 +100,21 @@
         </div>
       </div>
     </content>
+
+    <div class="winForm">
+      <!-- form if player has won -->
+      <div class="winner">You have won the Memory Game!
+        <div class="playAgain">Play Again?</div>
+      </div>
+
+      <!-- form if player has lost -->
+      <div class="loser">Bummer, you lost.
+        <div class="playAgain">Play Again?</div>
+      </div>
+
+    </div>
+
+
   </main>
   <script src="jquery-3.3.1.js"></script>
   <script src="script.js"></script>

@@ -8,7 +8,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 800px;
+  height: 750px;
   text-align: center;
 }
 
@@ -20,6 +20,9 @@ header {
   font-family: Pacifico, serif;
 }
 
+p {
+  border-radius: 15px;
+}
 content {
   display: flex;
   flex-direction: column;
@@ -39,20 +42,30 @@ content {
   background-color: white;
 }
 
-.playerOne, .playerTwo {
-  background-color: white;
+.playerOne {
+  width: 30%;
+  font-size: 15px;
+  border: 2px solid black;
+  height: 79%;
+  margin-top: 6px;
+  border-radius: 15px;
+}
+
+p:last-child{
+  font-size: 10px;
 }
 
 .reset {
   width: 30%;
   font-size: 20px;
   border: 2px solid black;
-  height: 50px;
-  margin-top: 10px;
+  height: 80%;
+  margin-top: 5px;
   border-radius: 15px;
+  font-family: Quicksand, "sans-serif";
 }
 
-.startButton {
+.startButton, .winner, .loser {
   width: 90%;
   height: 10%;
   border: 5px solid black;
@@ -62,6 +75,16 @@ content {
   border-radius: 20px;
   padding-top: 10px;
   background-color: lightgrey;
+}
+
+.playAgain {
+  background-color: white;
+  border-radius: 20px;
+  font-size: 30px;
+  width: 50%;
+  border: 3px solid black;
+  margin: 10px auto;
+
 }
 
 .row1, .row2, .row3, .row4 {
@@ -126,7 +149,17 @@ content {
 }
 
 @media screen and (min-width: 768px) {
-  main {
-    margin: 0 20%;
+
+    main {
+      margin: 0 20%;
+    }
+
+
+  /* main {
+    margin: -50px 20%;
   }
+
+  header {
+    margin-top: -50px;
+  } */
 }
