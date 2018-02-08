@@ -75,6 +75,7 @@ $(function () {
 
     })
     $resetButton.click(function () {
+        
         $grid.hide();
         $playerInfo.hide();
         $winForm.hide();
@@ -82,6 +83,9 @@ $(function () {
         $cardsFront.show();
         $cardsBack.hide();
         $startButton.slideDown(800);
+        winCounter = 0;
+        tryCounter = 0;
+        $attempts.text('/15');
 
     })
 
@@ -154,7 +158,7 @@ $(function () {
     }
     function updateAttempts() {
         tryCounter.toString;
-        $attempts.text(tryCounter);
+        $attempts.text(tryCounter + '/15');
     }
 
 
