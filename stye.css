@@ -1,7 +1,7 @@
 * {
   margin: 0 auto;
   box-sizing: border-box;
-  background-color: #ccffff;
+  background-color: #569494;
 }
 
 main {
@@ -16,12 +16,12 @@ header {
   width: 90%;
   height: 10%;
   margin-bottom: 20px;
-  font-size: 50px;
+  font-size: 45px;
   font-family: Pacifico, serif;
 }
 
 p {
-  border-radius: 15px;
+  border-radius: 20px;
 }
 content {
   display: flex;
@@ -32,6 +32,7 @@ content {
 }
 
 .playerInfo {
+  
   width: 90%;
   height: 10%;
   display: flex;
@@ -39,28 +40,29 @@ content {
   margin-bottom: 10px;
   border-radius: 20px;
   font-family: Quicksand, "sans-serif";
-  background-color: white;
+  background-color: lightgrey;
 }
 
 .playerOne {
   width: 30%;
   font-size: 15px;
-  border: 2px solid black;
+  border: 4px solid black;
   height: 79%;
   margin-top: 6px;
   border-radius: 15px;
 }
 
 p:last-child{
-  font-size: 10px;
+  font-size: 20px;
 }
 
 .reset {
   width: 30%;
   font-size: 20px;
-  border: 2px solid black;
+  border: 4px solid black;
   height: 80%;
   margin-top: 5px;
+  margin-bottom: 5px;
   border-radius: 15px;
   font-family: Quicksand, "sans-serif";
 }
@@ -77,15 +79,16 @@ p:last-child{
   background-color: lightgrey;
 }
 
-.playAgain {
+/* .playAgain {
   background-color: white;
   border-radius: 20px;
   font-size: 30px;
   width: 50%;
   border: 3px solid black;
   margin: 10px auto;
+  padding: 5px;
 
-}
+} */
 
 .row1, .row2, .row3, .row4 {
   display: flex;

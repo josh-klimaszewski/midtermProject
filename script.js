@@ -79,6 +79,7 @@ $(function () {
 
     //button to reset the grids, same function for play again button and reset button
     $resetButton.click(function () {
+        
         $grid.hide();
         $playerInfo.hide();
         $winForm.hide();
@@ -86,6 +87,9 @@ $(function () {
         $cardsFront.show();
         $cardsBack.hide();
         $startButton.slideDown(800);
+        winCounter = 0;
+        tryCounter = 0;
+        $attempts.text('/15');
 
     })
 
@@ -154,7 +158,7 @@ $(function () {
     //turns the attempt number into string to show on screen
     function updateAttempts() {
         tryCounter.toString;
-        $attempts.text(tryCounter);
+        $attempts.text(tryCounter + '/15');
     }
 
 
