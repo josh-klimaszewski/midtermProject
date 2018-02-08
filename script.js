@@ -39,6 +39,7 @@ $(function () {
     var thisCard;
     var winCounter = 0;
     //                                                   FUNCTIONS
+    //Shuffle the cell cards
     function shuffle(array) {
         var counter = array.length;
         while (counter > 0) {
@@ -52,7 +53,7 @@ $(function () {
         return array;
     }
 
-
+    //Assign the cards a color class
     function setColors(colors, array) {
         for (var i = 0; i < array.length; i++) {
             array[i].children('.back').attr('class', 'back')
@@ -65,6 +66,7 @@ $(function () {
     }
 
     //                                                   EVENT FUNCTIONS
+    //start button to begin the game
     $startButton.click(function () {
 
         $playerInfo.slideDown(200);
@@ -72,8 +74,10 @@ $(function () {
         $startButton.hide();
         shuffle(cardColors);
         setColors(cardColors, cellArray);
-
+    //shows the grid and player info form
     })
+
+    //button to reset the grids, same function for play again button and reset button
     $resetButton.click(function () {
         $grid.hide();
         $playerInfo.hide();
@@ -85,8 +89,8 @@ $(function () {
 
     })
 
+    //shows the front of card
     $cardsFront.click(function () {
-
         thisCard = $(this);
         thisCard.hide();
         thisCard.siblings('.back').show();
@@ -97,7 +101,8 @@ $(function () {
         winChecker();
         updateAttempts();
     })
-
+    
+    //checks if the two cards have a match
     function cardChecker() {
         if (cardsFlipped === 2) {
 
@@ -112,11 +117,7 @@ $(function () {
                     card2.slideDown(1500);
                     $('.' + color1).slideUp(1500);
                     $('.' + color2).slideUp(1500);
-
                 }, 500);
-
-
-
             } else if (color1 === color2) {
               setTimeout(function () {
                 $('.' + color1).slideUp(1500);
@@ -128,12 +129,9 @@ $(function () {
             cardsFlipped = 0;
             cardArray = [];
             colorArray = [];
-            console.log(cardsFlipped, cardArray, colorArray, tryCounter ,winCounter)
-
         }
-
-
     }
+
     function winChecker () {
         if (winCounter === 8) {
             $playerInfo.hide();
@@ -152,6 +150,8 @@ $(function () {
             console.log("you lose!");
         }
     }
+
+    //turns the attempt number into string to show on screen
     function updateAttempts() {
         tryCounter.toString;
         $attempts.text(tryCounter);
