@@ -8,6 +8,7 @@ $(function () {
     var $cardsBack = $('.back');
     var $winForm = $('.winForm');
     var $loseForm = $('.loseForm');
+    var $attempts = $('.attempts');
     var $cell = $('.cell');
     var $cell1 = $('.cell1');
     var $cell2 = $('.cell2');
@@ -76,6 +77,8 @@ $(function () {
     $resetButton.click(function () {
         $grid.hide();
         $playerInfo.hide();
+        $winForm.hide();
+        $loseForm.hide();
         $cardsFront.show();
         $cardsBack.hide();
         $startButton.slideDown(800);
@@ -92,6 +95,7 @@ $(function () {
         cardArray.push(thisCard);
         cardChecker();
         winChecker();
+        updateAttempts();
     })
 
     function cardChecker() {
@@ -99,15 +103,22 @@ $(function () {
             
             var color1 = colorArray[0];
             var color2 = colorArray[1];
+            var card1 = cardArray[0];
+            var card2 = cardArray[1];
             console.log(color1, color2);
             if (color1 !== color2) {
-                cardArray[0].show();
-                cardArray[1].show();
-                $('.' + color1).fadeOut(500);
-                $('.' + color2).fadeOut(500);
+                setTimeout(function () {
+                    card1.slideDown(1500);
+                    card2.slideDown(1500);
+                    $('.' + color1).slideUp(1500);
+                    $('.' + color2).slideUp(1500);
+
+                }, 1000);
+                
+             
 
             } else if (color1 === color2) {
-                $('.' + color1).fadeOut(500);
+                $('.' + color1).hide();
                 winCounter++;
             }
             tryCounter ++;
@@ -125,15 +136,24 @@ $(function () {
             $playerInfo.hide();
             $grid.hide();
             $winForm.show();
+            winCounter = 0;
+            tryCounter = 0;
             console.log("you won!");
         }
         if (tryCounter === 15) {
             $playerInfo.hide();
             $grid.hide();
             $loseForm.show();
+            winCounter = 0;
+            tryCounter = 0;
             console.log("you lose!");
         }
     }
+    function updateAttempts() {
+        tryCounter.toString;
+        $attempts.text(tryCounter);
+    }
+  
 
     //                                                   WORKFLOW
     $grid.hide();
