@@ -8,8 +8,8 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 750px;
   text-align: center;
+  height: 650px;
 }
 
 header {
@@ -29,7 +29,7 @@ content {
   flex-direction: column;
   justify-content: space-around;
   width: 90%;
-  height: 60%;
+  height: 65%;
 }
 
 .playerInfo {
@@ -53,7 +53,7 @@ content {
 }
 
 p:last-child {
-  font-size: 20px;
+  font-size: 10px;
 }
 
 .reset {
@@ -77,7 +77,7 @@ p:last-child {
   font-family: Quicksand, "sans-serif";
   font-size: 40px;
   border-radius: 20px;
-  padding-top: 10px;
+  /* padding-top: 10px; */
   background-color: lightgrey;
 }
 
@@ -158,9 +158,14 @@ p:last-child {
 @media screen and (min-width: 768px) {
   main {
     margin: 0 20%;
+    height: 700px;
   }
   .cell:hover .front{
     border: 4px solid black;
-    
+
+  }
+
+  p:last-child {
+    font-size: 15px;
   }
 }

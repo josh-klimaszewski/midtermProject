@@ -88,11 +88,11 @@ $(function () {
         $startButton.slideDown(800);
         winCounter = 0;
         tryCounter = 0;
-        $attempts.text('/15');
+        $attempts.text('/10');
 
     })
 
-    
+
     $cardsFront.click(function () {
         thisCard = $(this);
         //flips card to back
@@ -135,9 +135,9 @@ $(function () {
                     },
                     500);
                 winCounter++;
-                
+
             }
-          
+
             //reset cardchecker
             cardsFlipped = 0;
             cardArray = [];
