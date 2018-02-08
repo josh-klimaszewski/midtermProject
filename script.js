@@ -61,9 +61,7 @@ $(function () {
 
         }
     }
-    function reset() {
 
-    }
 
     //                                                   EVENT FUNCTIONS
     //start button to begin the game
@@ -74,12 +72,12 @@ $(function () {
         $startButton.hide();
         shuffle(cardColors);
         setColors(cardColors, cellArray);
-    //shows the grid and player info form
+        //shows the grid and player info form
     })
 
     //button to reset the grids, same function for play again button and reset button
     $resetButton.click(function () {
-        
+
         $grid.hide();
         $playerInfo.hide();
         $winForm.hide();
@@ -105,7 +103,7 @@ $(function () {
         winChecker();
         updateAttempts();
     })
-    
+
     //checks if the two cards have a match
     function cardChecker() {
         if (cardsFlipped === 2) {
@@ -123,20 +121,20 @@ $(function () {
                     $('.' + color2).slideUp(1500);
                 }, 500);
             } else if (color1 === color2) {
-              setTimeout(function () {
-                $('.' + color1).slideUp(1500);
-              },
-              500);
-              winCounter++;
+                setTimeout(function () {
+                        $('.' + color1).slideUp(1500);
+                    },
+                    500);
+                winCounter++;
             }
-            tryCounter ++;
+            tryCounter++;
             cardsFlipped = 0;
             cardArray = [];
             colorArray = [];
         }
     }
 
-    function winChecker () {
+    function winChecker() {
         if (winCounter === 8) {
             $playerInfo.hide();
             $grid.hide();
