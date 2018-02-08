@@ -100,7 +100,7 @@ $(function () {
 
     function cardChecker() {
         if (cardsFlipped === 2) {
-            
+
             var color1 = colorArray[0];
             var color2 = colorArray[1];
             var card1 = cardArray[0];
@@ -113,22 +113,25 @@ $(function () {
                     $('.' + color1).slideUp(1500);
                     $('.' + color2).slideUp(1500);
 
-                }, 1000);
-                
-             
+                }, 500);
+
+
 
             } else if (color1 === color2) {
-                $('.' + color1).hide();
-                winCounter++;
+              setTimeout(function () {
+                $('.' + color1).slideUp(1500);
+              },
+              500);
+              winCounter++;
             }
             tryCounter ++;
             cardsFlipped = 0;
             cardArray = [];
             colorArray = [];
             console.log(cardsFlipped, cardArray, colorArray, tryCounter ,winCounter)
-            
+
         }
-        
+
 
     }
     function winChecker () {
@@ -153,7 +156,7 @@ $(function () {
         tryCounter.toString;
         $attempts.text(tryCounter);
     }
-  
+
 
     //                                                   WORKFLOW
     $grid.hide();
