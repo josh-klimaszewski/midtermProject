@@ -127,6 +127,7 @@ $(function () {
                     $('.' + color1).slideUp(1500);
                     $('.' + color2).slideUp(1500);
                 }, 500);
+                tryCounter++;
             } else if (color1 === color2) {
                 //if match, only hide back, wins++
                 setTimeout(function () {
@@ -134,8 +135,9 @@ $(function () {
                     },
                     500);
                 winCounter++;
+                
             }
-            tryCounter++;
+          
             //reset cardchecker
             cardsFlipped = 0;
             cardArray = [];
@@ -153,8 +155,8 @@ $(function () {
             tryCounter = 0;
             console.log("you won!");
         }
-        //if 15 tries, show lose form and reset counters
-        if (tryCounter === 15) {
+        //if 10 tries, show lose form and reset counters
+        if (tryCounter === 10) {
             $playerInfo.hide();
             $grid.hide();
             $loseForm.show();
@@ -167,7 +169,7 @@ $(function () {
     //turns the attempt number into string to show on screen
     function updateAttempts() {
         tryCounter.toString;
-        $attempts.text(tryCounter + '/15');
+        $attempts.text(tryCounter + '/10');
     }
 
 
