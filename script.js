@@ -6,6 +6,8 @@ $(function () {
     var $resetButton = $('.reset');
     var $cardsFront = $('.front');
     var $cardsBack = $('.back');
+    var $winForm = $('.winForm');
+    var $loseForm = $('.loseForm');
     var $cell = $('.cell');
     var $cell1 = $('.cell1');
     var $cell2 = $('.cell2');
@@ -116,24 +118,29 @@ $(function () {
             
         }
         
-        // win function: paramaters = tryCounter, winCounter
-        // if tryCounter = 10, you lose
-        // if winCounter = 8, you win.
+
     }
     function winChecker () {
         if (winCounter === 8) {
+            $playerInfo.hide();
+            $grid.hide();
+            $winForm.show();
             console.log("you won!");
         }
-        if (tryCounter === 12) {
+        if (tryCounter === 15) {
+            $playerInfo.hide();
+            $grid.hide();
+            $loseForm.show();
             console.log("you lose!");
         }
     }
 
     //                                                   WORKFLOW
-    // on load/reset: 
     $grid.hide();
     $playerInfo.hide();
     $cardsBack.hide();
+    $winForm.hide();
+    $loseForm.hide();
 
 
 
