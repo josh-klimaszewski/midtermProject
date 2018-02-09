@@ -108,36 +108,36 @@ p:last-child {
   border-radius: 10px;
 }
 
-.red {
-  background-color: red;
+.maroon {
+  background-color: maroon;
 }
 
-.blue {
-  background-color: blue;
+.navy {
+  background-color: navy;
 }
 
-.orange {
-  background-color: orange;
+.chocolate {
+  background-color: chocolate;
 }
 
-.yellow {
-  background-color: yellow;
+.forestgreen {
+  background-color: forestgreen;
 }
 
-.green {
-  background-color: green;
+.gold {
+  background-color: gold;
 }
 
-.purple {
-  background-color: purple;
+.lightcoral {
+  background-color: lightcoral;
 }
 
-.cyan {
-  background-color: cyan;
+.darkmagenta {
+  background-color: darkmagenta;
 }
 
-.grey {
-  background-color: grey;
+.slategray {
+  background-color: slategray;
 }
 
 .front {

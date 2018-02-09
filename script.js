@@ -31,8 +31,8 @@ $(function () {
     var cellArray = [$cell1, $cell2, $cell3, $cell4, $cell5, $cell6, $cell7, $cell8,
         $cell9, $cell10, $cell11, $cell12, $cell13, $cell14, $cell15, $cell16
     ]
-    var cardColors = ['red', 'red', 'blue', 'blue', 'orange', 'orange', 'yellow', 'yellow',
-        'green', 'green', 'purple', 'purple', 'cyan', 'cyan', 'grey', 'grey'
+    var cardColors = ['maroon', 'maroon', 'navy', 'navy', 'chocolate', 'chocolate', 'forestgreen', 'forestgreen',
+        'gold', 'gold', 'lightcoral', 'lightcoral', 'darkmagenta', 'darkmagenta', 'slategray', 'slategray'
     ]
     //  global variables
     var cardsFlipped = 0;
@@ -81,7 +81,7 @@ $(function () {
     //  shows the grid and player info form
     })
 
-    //  runs on play again also  
+    //  runs on play again also
     $resetButton.click(function () {
     //  manipulate DOM
         $grid.hide();
