@@ -77,20 +77,8 @@ p:last-child {
   font-family: Quicksand, "sans-serif";
   font-size: 40px;
   border-radius: 20px;
-  /* padding-top: 10px; */
   background-color: lightgrey;
 }
-
-/* .playAgain {
-  background-color: white;
-  border-radius: 20px;
-  font-size: 30px;
-  width: 50%;
-  border: 3px solid black;
-  margin: 10px auto;
-  padding: 5px;
-
-} */
 
 .row1,
 .row2,
